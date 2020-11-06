@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: configserver
+  profile:
+    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${config.uri:C:\configserver}
+          #uri: ${config.uri:https://github.ibm.com/jayanthiramachandran/configserver.git}
+          native: C:\configserver
+  
+server:
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'            
